@@ -69,5 +69,9 @@ node file.js
 
 > Only edit the TypeScript file `.ts`, do not edit the JavaScript file `.js`. Remember that `.js` is generated every time by the TypeScript compiler.
 
+4. By default, `tsc` will still generate a `.js` file. To prevent this copiler flag use:
 
+```
+tsc -noEmitOnError sample-types.ts
+```
 
