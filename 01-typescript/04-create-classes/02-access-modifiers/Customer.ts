@@ -1,3 +1,6 @@
+/**
+ * Class with private properties and constructor
+ */
 class Customer {
 	
 	private firstName: string;
