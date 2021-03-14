@@ -1,8 +1,5 @@
 class Customer {
 	
-	//properties -> public by default
-	// firstName: string;
-	// lastName: string;
 	private firstName: string;
 	private lastName: string;
 
@@ -12,16 +9,7 @@ class Customer {
 	}
 }
 
-// Without constructor
-// let obama = new Customer();
-
-// obama.firstName = "Barack";
-// obama.lastName = "Obama";
-
-// With constructor but public variables
+// create instance
 let obama = new Customer("Barack", "Obama");
-
-// With constructor and private variables
-
 
 console.log(`Customer Name: ${obama.firstName} ${obama.lastName}`);
