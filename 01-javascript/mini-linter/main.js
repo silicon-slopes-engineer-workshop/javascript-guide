@@ -4,22 +4,35 @@ let overusedWords = ['really', 'very', 'basically'];
 
 let unnecessaryWords = ['extremely', 'literally', 'actually' ];
 
+// 1
 let storyWords = story.split(' ');
 
+// 2
 console.log(`Total: ${storyWords.length} words in story`);
 
+// 3
 const betterWords = storyWords.filter(word => !unnecessaryWords.includes(word));
 
-let compWords = word1 => overusedWords.forEach( word2 => {
-  return word2 === word1;
+// 4 & 8
+let wordCount = 0;
+let totalOveruse = betterWords.forEach((word, index) => {
+  overusedWords.forEach(word2 => {
+    if (word === word2) {
+      wordCount++;
+      betterWords.splice(index, 1);
+    }
+  });
 });
+console.log(`Total overused words: ${wordCount}`);
 
-let cnt = 0;
-
-let totalOverused = storyWords.forEach( word => {
-  if (compWords(word)) {
-    cnt++;
+// 5
+let sentenceCount = 0;
+let totalSentences = betterWords.forEach((word, index) => {
+  if (word.endsWith('!') || word.endsWith('.')) {
+    sentenceCount++;
+    betterWords.slice(index, -1)
   }
-}, cnt);
+});
+console.log(`Total sentences: ${sentenceCount}`);
 
-console.log(totalOverused);
+console.log(betterWords.join(' '));
