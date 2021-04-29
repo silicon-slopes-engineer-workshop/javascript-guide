@@ -76,9 +76,38 @@ function findInvalidCards(cards) {
  * @param array cards : nested array of invalid numbers 
  */
 function idInvalidCardCompanies(cards) {
-	let companies = [];
+	let companies = {
+		3: 'Amex (American Express)',
+		4: 'Visa',
+		5: 'Mastercard',
+		6: 'Discover'
+	};
+	let found = [];
 
 	for (let card of cards) {
+		let num = card[0];
 		
+		if (num >= 3 && num <= 6) {
+			if (!found.includes(companies[num])) {
+				found.push(companies[num]);
+			}
+		} else {
+			console.log("Company not found");
+		}
 	}
+	return found;
 }
+
+/**
+ * Convert String to Array
+ * function that accepts a string and converts it into an array of numbers
+ * 
+ * @param string input : a string of number
+ */
+function convertStringtoArray(input) {
+	input = input.split('');
+	return input.map(char => { return parseInt(char); });
+}
+
+// Test credit cards with 
+// https://www.freeformatter.com/credit-card-number-generator-validator.html

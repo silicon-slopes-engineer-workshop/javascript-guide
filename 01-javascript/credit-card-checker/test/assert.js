@@ -31,13 +31,13 @@ const assert = {
 		}
 	},
 
-	equals(testName, description, functionString, actualValue, expectedValue) {
+	equals(testName, functionString, actualValue, expectedValue) {
 		const testNumber = this.incrementTestNumber(testName);
 
 		if (actualValue === expectedValue) {
-			console.log("\x1b[32m%s\x1b[0m", `${testNumber} - ${description} - Passed!`);
+			console.log("\x1b[32m%s\x1b[0m", `${testNumber} - Passed!`);
 		} else {
-			console.log("\x1b[31m%s\x1b[0m", `${testNumber} - ${description} - Failed: ${functionString} returned ${actualValue} instead of ${expectedValue}.`);
+			console.log("\x1b[31m%s\x1b[0m", `${testNumber} - Failed: ${functionString} returned ${actualValue} instead of ${expectedValue}.`);
 		}
 	},
 

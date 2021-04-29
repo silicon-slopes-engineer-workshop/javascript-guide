@@ -8,8 +8,8 @@ assert.beginTestBlock(TEST_NAME);
 assert.exists(TEST_NAME, '_.clamp()', _.clamp);
 
 if (!_.clamp) {
-  assert.terminateTestBlock();
-  return;
+	assert.terminateTestBlock();
+	return;
 }
 
 assert.equals(TEST_NAME, 'Returns in-range values unmodified', '_.clamp(2, 1, 3)', _.clamp(2, 1, 3), 2);
