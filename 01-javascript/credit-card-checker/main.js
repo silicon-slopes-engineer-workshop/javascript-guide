@@ -25,10 +25,60 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 // Add your functions below:
 
+/**
+ * Validate Credit Card Checker
+ * check if numbers in credit card are valid
+ * 
+ * @param array arr : array contains numbers of a credit card
+ */
 
+function validateCred(card) {
+	let last = card[card.length - 1];
+	let sumAll = last;
 
+	for (let i = card.length - 1; i >= 0; i--) {
+		let temp = card[i] * 2;
+		if (temp > 9) {
+			temp -= 9;
+		}
+		sumAll += temp;
+	}
 
+	if (sumAll % 10 == 0) {
+		return true;
+	} else {
+		return false;
+	}
+}
 
+/**
+ * Find Invalid Credit Cards
+ * check through nested arrays for which numbers are invalid
+ * return another nested array of invalid cards
+ * 
+ * @param array cards : nested arrays of credit card numbers.
+ */
+function findInvalidCards(cards) {
+	let invalidCards = [];
+  	for (card of cards) {
+		if (!validateCred(card)) {
+			invalidCards.push(card);
+		}  
+	}
+	console.log(invalidCards);
+	return invalidCards;
+}
 
+/**
+ * ID Invalid Card Companies
+ * identify the credit card companies that have possibly issued these faulty numbers
+ * 
+ * @param array cards : nested array of invalid numbers 
+ */
+function idInvalidCardCompanies(cards) {
+	let companies = [];
 
-
+	for (let card of cards) {
+		
+	}
+}
