@@ -1,0 +1,8 @@
+body {
+    background-color: darkgoldenrod; /* so I differientiate different project index.html */
+    color: white;
+}
+
+.my-table {
+    border: solid 1px;
+}
