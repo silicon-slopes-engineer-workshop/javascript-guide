@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+
+	<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+	</header>
+
+	<div class="container-fluid">
+		<div class="row">
+
+			<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+			</nav>
+
+			<div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+				<h3 class="pb-4 mb-4 fst-italic border-bottom">
+					Install Development Tools
+				</h3>
+
+				<article class="blog-post">
+					<h2 class="blog-post-title">Linux</h2>
+					<p class="blog-post-meta">
+						&copy; 2021, <a href="http://www.luv2code.com">luv2code LLC</a> - All
+						rights reserved.
+					</p>
+
+					<hr>
+
+					<p>Install the following development tools</p>
+					<ul>
+						<li><code>node</code></li>
+						<li><code>npm</code></li>
+						<li><code>tsc</code></li>
+					</ul>
+					<h2 id="install-node-">Install <code>Node</code></h2>
+					<p><code>Node</code> is the the runtime environment for executing JavaScript code from the
+						command-line.
+						By using <code>Node</code>, you can create any type of application using JavaScript including
+						server-side / backend applications.</p>
+					<p>In this course, we&#39;ll use Node to run applications that we develop using TypeScript and
+						Angular.</p>
+					<ol>
+						<li>
+							<p>In your web browser, visit <a
+									href="https://nodejs.org/en/download/current/">https://nodejs.org/en/download/current/</a>
+							</p>
+						</li>
+						<li>
+							<p>Select the <strong>Windows Installer (.msi)</strong> for your system (32-bit or 64-bit)
+							</p>
+						</li>
+						<li>
+							<p>Run the Installer</p>
+						</li>
+						<li>
+							<p>Follow the steps in the Installer</p>
+						</li>
+						<li>
+							<p>Open a <strong>Command Prompt</strong> window to verify the node installation</p>
+						</li>
+						<li>
+							<p>In the <strong>Command Prompt</strong> window, type the following command: </p>
+							<pre><code class="lang-bash"> <span class="hljs-keyword">node</span> <span class="hljs-title">--version</span>
+</code></pre>
+							<p>If the installation is successful, you will see the version number</p>
+							<blockquote>
+								<p>Note: The Node installation also includes npm (Node Package Manager).</p>
+							</blockquote>
+						</li>
+						<li>
+							<p>Verify npm is installed</p>
+							<pre><code class="lang-bash"> npm <span class="hljs-comment">--version</span>
+</code></pre>
+							<p>If the installation is successful, you will see the version number. </p>
+							<blockquote>
+								<p>Note: node will have a different number than npm. This is similar to a different Java
+									JDK version number compared to Maven version number.</p>
+								<p>In this example, node is similar to the Java JDK. And npm is similar to Maven.</p>
+							</blockquote>
+						</li>
+					</ol>
+					<h2 id="install-tsc-">Install <code>tsc</code></h2>
+					<p><code>tsc</code> is the TypeScript compiler. We use tsc to compile TypeScript code into
+						JavaScript code.
+						We can install the TypeScript compile using the Node Package Manager (<code>npm</code>)</p>
+					<ol>
+						<li>
+							<p>In your <strong>Command Prompt</strong> window, enter the following command</p>
+							<pre><code> npm <span class="hljs-keyword">install</span> -g typescript
+</code></pre>
+							<p>The &quot;-g&quot; installs this as a global package. The TypeScript compiler will be
+								available to all directories for this user.</p>
+							<p>You will see something similar to</p>
+							<pre><code> C:<span class="hljs-symbol">\U</span>sers<span class="hljs-symbol">\l</span>uv2code<span class="hljs-symbol">\A</span>ppData<span class="hljs-symbol">\R</span>oaming<span class="hljs-symbol">\n</span>pm<span class="hljs-symbol">\t</span>sserver -&gt; C:<span class="hljs-symbol">\U</span>sers<span class="hljs-symbol">\l</span>uv2code<span class="hljs-symbol">\A</span>ppData<span class="hljs-symbol">\R</span>oaming<span class="hljs-symbol">\n</span>pm<span class="hljs-symbol">\n</span>ode_modules<span class="hljs-symbol">\t</span>ypescript<span class="hljs-symbol">\b</span>in<span class="hljs-symbol">\t</span>sserver
+ C:<span class="hljs-symbol">\U</span>sers<span class="hljs-symbol">\l</span>uv2code<span class="hljs-symbol">\A</span>ppData<span class="hljs-symbol">\R</span>oaming<span class="hljs-symbol">\n</span>pm<span class="hljs-symbol">\t</span>sc -&gt; C:<span class="hljs-symbol">\U</span>sers<span class="hljs-symbol">\l</span>uv2code<span class="hljs-symbol">\A</span>ppData<span class="hljs-symbol">\R</span>oaming<span class="hljs-symbol">\n</span>pm<span class="hljs-symbol">\n</span>ode_modules<span class="hljs-symbol">\t</span>ypescript<span class="hljs-symbol">\b</span>in<span class="hljs-symbol">\t</span>sc
+ + typescript@3.6.3
+ added 1 package from 1 contributor in 3.188s
+</code></pre>
+						</li>
+						<li>
+							<p>You can verify the installation</p>
+							<pre><code class="lang-bash"> tsc <span class="hljs-comment">--version</span>
+</code></pre>
+							<p>If the installation is successful, you will see the version number.</p>
+						</li>
+					</ol>
+					<p>That&#39;s it! You have successfully installed the development tools: Visual Studio Code, node,
+						npm and tsc.</p>
+					<h2 id="troubleshooting">Troubleshooting</h2>
+					<h3 id="permissions-issue-with-tsc">Permissions Issue with tsc</h3>
+					<ol>
+						<li>
+							<p>If you get the following error when executing tsc command using PowerShell:</p>
+							<pre><code class="lang-bash"> <span class="hljs-string">tsc :</span> File <span class="hljs-string">C:</span>\Users\johndoe\AppData\Roaming\npm\tsc.ps1 cannot be loaded because running scripts is disabled on <span class="hljs-keyword">this</span> system. For more information, see about_Execution_Policies at <span class="hljs-string">https:</span><span class="hljs-regexp">/go.microsoft.com/</span>fwlink/?LinkID=135170.
+
+ At line:<span class="hljs-number">1</span> <span class="hljs-string">char:</span><span class="hljs-number">1</span>
+ + tsc sample-datatypes.ts
+ + ~~~
+     + <span class="hljs-string">CategoryInfo          :</span> <span class="hljs-string">SecurityError:</span> (:) [], PSSecurityException
+     + <span class="hljs-string">FullyQualifiedErrorId :</span> UnauthorizedAccess
+</code></pre>
+						</li>
+						<li>
+							<p>You can resolve this issue with the following steps:</p>
+							<ol>
+								<li>
+									<p>Run Visual Studio Code as <strong>Administrator</strong></p>
+								</li>
+								<li>
+									<p>In the Terminal Window of Visual Studio Code, run
+										<code>Set-ExecutionPolicy RemoteSigned</code> on PowerShell.</p>
+									<p><em>This troubleshooting tip was contributed by <strong>Fabio Gomes
+												Sakiyama</strong>. Thanks Fabio!!</em></p>
+								</li>
+							</ol>
+						</li>
+					</ol>
+					<h3 id="typescript-tsc-is-not-recognized-as-an-internal-or-external-command-">Typescript:
+						<code>&#39;tsc&#39; is not recognized as an internal or external command</code></h3>
+					<ol>
+						<li>
+							<p>If you get the following error when executing tsc command:</p>
+							<pre><code class="lang-bash"> Typescript: <span class="hljs-string">'tsc'</span> is <span class="hljs-keyword">not</span> recognized <span class="hljs-keyword">as</span> <span class="hljs-keyword">an</span> internal <span class="hljs-keyword">or</span> external <span class="hljs-keyword">command</span>
+</code></pre>
+						</li>
+						<li>
+							<p>You can resolve this issue with the following:</p>
+							<ol>
+								<li>
+									<p>Add the npm installation folder to your &quot;user variables&quot; AND
+										&quot;environment variables&quot;</p>
+									<p><em>This troubleshooting tip was contributed by <strong>Chris</strong>. Thanks
+											Chris!!</em></p>
+								</li>
+							</ol>
+						</li>
+					</ol>
+					<blockquote>
+						<p>Not me, not the Chris that Luv2Code send thanks to LOL</p>
+					</blockquote>
+
+
+				</article><!-- /.blog-post -->
+			</div>
+		</div>
+
+		<footer class="container-fluid col-md-9 ms-sm-auto col-lg-10 px-md-4"></footer>
+
+	</div>
+	</div>
+
+	<script src="incl.js"></script>
+</body>
+
+</html>

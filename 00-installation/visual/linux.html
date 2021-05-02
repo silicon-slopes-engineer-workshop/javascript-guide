@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+
+	<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+	</header>
+
+	<div class="container-fluid">
+		<div class="row">
+
+			<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+			</nav>
+
+			<div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+				<h3 class="pb-4 mb-4 fst-italic border-bottom">
+					Install Development Tools
+				</h3>
+
+				<article class="blog-post">
+					<h2 class="blog-post-title">Linux</h2>
+					<p class="blog-post-meta">
+						&copy; 2021, <a href="http://www.luv2code.com">luv2code LLC</a> - All
+						rights reserved.
+					</p>
+
+					<hr>
+
+					<p>We will install the following development tools</p>
+					<ul>
+						<li><code>node</code></li>
+						<li><code>npm</code></li>
+						<li><code>tsc</code></li>
+					</ul>
+
+					<h2 id="prerequisites">Prerequisites</h2>
+					<p><code>git</code>: You must have the git command-line tool installed. </p>
+					<p>To install <code>git</code>, visit: <a href="https://git-scm.com/">https://git-scm.com/</a></p>
+
+					<h2 id="install-nvm-">Install <code>NVM</code></h2>
+					<p><strong>nvm</strong> is the <a href="https://github.com/nvm-sh/nvm">Node Version Manager</a>. It
+						allows you to install multiple versions of Node on your computer. Once installed, then you can
+						easily switch to a different version of Node. This is very useful if you want to develop/test
+						using different versions of Node. When you are developing multiple projects, you will most
+						likely need to support different versions of Node. </p>
+					<p>The best feature of nvm is that it makes the installation of Node very easy for Mac and Linux
+						system. Historically, to install Node on Mac/Linux, you would have to make frequent use of the
+						&quot;sudo&quot; command to elevate privileges. This was a painful and clunky process during
+						development. Thanks the nvm, we no longer have to use &quot;sudo&quot; when using Node.</p>
+					<p>Also, the Node ecosystem is a fast moving target and versions change frequently. nvm makes it
+						easy to stay up to date with the latest version of Node. </p>
+					<p>The website for nvm is: <a href="https://github.com/nvm-sh/nvm">https://github.com/nvm-sh/nvm</a>
+					</p>
+					<blockquote>
+						<p>Note: You must have git installed before running this script.</p>
+					</blockquote>
+
+					<h3 id="install">Install</h3>
+					<ol>
+						<li>
+							<p>Open a new terminal window</p>
+						</li>
+						<li>
+							<p>Enter the following commands:</p>
+							<pre><code class="lang-bash"> curl -o- https:<span class="hljs-regexp">//</span>raw.githubusercontent.com<span class="hljs-regexp">/creationix/</span>nvm<span class="hljs-regexp">/v0.35.0/i</span>nstall.sh | bash
+</code></pre>
+							<p>The script clones the nvm repository to ~/.nvm and adds the source line to your profile
+								(<code>~/.bash_profile</code>,<code>~/.zshrc</code>, <code>~/.profile</code>, or
+								<code>~/.bashrc</code>).</p>
+							<p>You will see output similar to the following:</p>
+							<pre><code>   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+ <span class="hljs-number">100</span> <span class="hljs-number">13527</span>  <span class="hljs-number">100</span> <span class="hljs-number">13527</span>    <span class="hljs-number">0</span>     <span class="hljs-number">0</span>  <span class="hljs-number">62065</span>      <span class="hljs-number">0</span> --<span class="hljs-symbol">:--</span><span class="hljs-symbol">:--</span> --<span class="hljs-symbol">:--</span><span class="hljs-symbol">:--</span> --<span class="hljs-symbol">:--</span><span class="hljs-symbol">:--</span> <span class="hljs-number">62336</span>
+ =&gt; Downloading nvm from git to <span class="hljs-string">'/home/luv2code/.nvm'</span>
+ =&gt; Cloning into <span class="hljs-string">'/home/luv2code/.nvm'</span>...
+ <span class="hljs-symbol">remote:</span> Enumerating <span class="hljs-symbol">objects:</span> <span class="hljs-number">286</span>, done.
+ ...
+
+ =&gt; Appending nvm source string to /home/luv2code/.bashrc
+ =&gt; Appending bash_completion source string to /home/luv2code/.bashrc
+ =&gt; Close and reopen your terminal to start using nvm or run the following to use it <span class="hljs-symbol">now:</span>
+
+ ...
+</code></pre>
+						</li>
+						<li>
+							<p>Apply the new PATH settings with:</p>
+							<pre><code class="lang-bash"> <span class="hljs-built_in">source</span> ~/.bashrc
+</code></pre>
+						</li>
+						<li>
+							<p>Verify the installation, by typing the following command:</p>
+							<pre><code class="lang-bash"> nvm <span class="hljs-comment">--version</span>
+</code></pre>
+							<p>If the installation is successful, you will see the version number.</p>
+						</li>
+					</ol>
+					<blockquote>
+						<p>For details on other nvm commands, use <code>nvm --help</code> or see the docs: <a
+								href="https://github.com/nvm-sh/nvm">https://github.com/nvm-sh/nvm</a></p>
+					</blockquote>
+					<h2 id="install-node-">Install <code>Node</code></h2>
+					<p><code>Node</code> is the the runtime environment for executing JavaScript code from the
+						command-line. By using <code>Node</code>, you can create any type of application using
+						JavaScript including server-side / backend applications.</p>
+					<p>In this course, we&#39;ll use <code>Node</code> to run applications that we develop using
+						TypeScript and Angular.</p>
+					<ol>
+						<li>
+							<p>In your terminal window, type the following command:</p>
+							<pre><code class="lang-bash"> nvm install <span class="hljs-keyword">node</span><span class="hljs-title"></span>
+</code></pre>
+							<p>You will see the following output</p>
+							<pre><code> Downloading and installing node v12<span class="hljs-number">.11</span><span class="hljs-number">.1</span>...
+ Downloading https:<span class="hljs-comment">//nodejs.org/dist/v12.11.1/node-v12.11.1-darwin-x64.tar.gz...</span>
+ ######################################################################## <span class="hljs-number">100.0</span>%
+ Computing checksum <span class="hljs-keyword">with</span> shasum -a <span class="hljs-number">256</span>
+ Checksums matched!
+ Now using node v12<span class="hljs-number">.11</span><span class="hljs-number">.1</span> (npm v6<span class="hljs-number">.11</span><span class="hljs-number">.3</span>)
+ Creating default alias: default -&gt; node (-&gt; v12<span class="hljs-number">.11</span><span class="hljs-number">.1</span>)
+</code></pre>
+						</li>
+						<li>
+							<p>Verify the <code>node</code> installation</p>
+							<pre><code class="lang-bash"> <span class="hljs-keyword">node</span> <span class="hljs-title">--version</span>
+</code></pre>
+							<p>If the installation is successful, you will see the version number</p>
+							<p><em>Note: The <code>Node</code> installation also includes <code>npm</code>
+									(<code>Node</code> Package Manager).</em></p>
+						</li>
+						<li>
+							<p>Verify <code>npm</code> is installed</p>
+							<pre><code class="lang-bash"> npm <span class="hljs-comment">--version</span>
+</code></pre>
+							<p>If the installation is successful, you will see the version number. </p>
+							<blockquote>
+								<p>Note: node will have a different number than <code>npm</code>. This is similar to a
+									different Java JDK version number compared to Maven version number.</p>
+								<p>In this example, node is similar to the Java JDK. And <code>npm</code> is similar to
+									Maven.</p>
+							</blockquote>
+						</li>
+					</ol>
+					<h2 id="install-tsc">Install <code>tsc</code></h2>
+					<p>tsc is the TypeScript compiler. We use tsc to compile TypeScript code into JavaScript code. We
+						can install the TypeScript compile using the Node Package Manager (<code>npm</code>)</p>
+					<ol>
+						<li>
+							<p>In you terminal window, enter the following command</p>
+							<pre><code> npm <span class="hljs-keyword">install</span> -g typescript
+</code></pre>
+							<p>The <code>-g</code> installs this as a global package. The TypeScript compiler will be
+								available to all directories for this user.</p>
+							<p>You will see something similar to</p>
+							<pre><code> /Users/luv2code/.nvm/versions/node/v12.<span class="hljs-number">11.1</span>/bin/tsc -&gt; <span class="hljs-regexp">/Users/luv</span>2code/.nvm/versions/node/v12.<span class="hljs-number">11.1</span>/<span class="hljs-class"><span class="hljs-keyword">lib</span>/<span class="hljs-title">node_modules</span>/<span class="hljs-title">typescript</span>/<span class="hljs-title">bin</span>/<span class="hljs-title">tsc</span></span>
+ /Users/luv2code/.nvm/versions/node/v12.<span class="hljs-number">11.1</span>/bin/tsserver -&gt; <span class="hljs-regexp">/Users/luv</span>2code/.nvm/versions/node/v12.<span class="hljs-number">11.1</span>/<span class="hljs-class"><span class="hljs-keyword">lib</span>/<span class="hljs-title">node_modules</span>/<span class="hljs-title">typescript</span>/<span class="hljs-title">bin</span>/<span class="hljs-title">tsserver</span></span>
+ + typescript@<span class="hljs-number">3.6</span>.<span class="hljs-number">3</span>
+ added <span class="hljs-number">1</span> package from <span class="hljs-number">1</span> contributor in <span class="hljs-number">1.526</span>s
+</code></pre>
+						</li>
+						<li>
+							<p>You can verify the installation</p>
+							<pre><code class="lang-bash"> tsc <span class="hljs-comment">--version</span>
+</code></pre>
+							<p>If the installation is successful, you will see the version number.</p>
+						</li>
+					</ol>
+					<p>That&#39;s it! You have successfully installed the development tools: Visual Studio Code, nvm,
+						node, npm and tsc.</p>
+				</article><!-- /.blog-post -->
+			</div>
+		</div>
+
+		<footer class="container-fluid col-md-9 ms-sm-auto col-lg-10 px-md-4"></footer>
+
+	</div>
+	</div>
+
+	<script src="incl.js"></script>
+</body>
+
+</html>
