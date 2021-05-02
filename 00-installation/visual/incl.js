@@ -1,12 +1,13 @@
-fetch("head.html")
+fetch("/src/include/head.html")
 	.then(response => {
 		return response.text()
 	})
 	.then(data => {
 		document.querySelector("head").innerHTML = data;
+		document.title = "JS Installation";
 	});
 
-fetch("../../src/include/header.html")
+fetch("/src/include/header.html")
 	.then(response => {
 		return response.text()
 	})
@@ -14,7 +15,7 @@ fetch("../../src/include/header.html")
 		document.querySelector("header").innerHTML = data;
 	});
 
-fetch("../../src/include/nav.html")
+fetch("/src/include/nav.html")
 	.then(response => {
 		return response.text()
 	})
@@ -22,7 +23,7 @@ fetch("../../src/include/nav.html")
 		document.querySelector("nav").innerHTML = data;
 	});
 
-fetch("../../src/include/footer.html")
+fetch("/src/include/footer.html")
 	.then(response => {
 		return response.text()
 	})
