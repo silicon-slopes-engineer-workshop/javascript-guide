@@ -36,10 +36,78 @@ const pAequorFactory = (number, arr) => {
             }
             this.dna[select] = newBase;
 		},
-		// 
-		compareDNA() {},
+		// compare dna of two different pAequor
+		compareDNA(pAequor) {
+			let curr = this.dna;
+			let past = pAequor.dna;
+			let cnt = 0;
+			for(let i = 0; i < curr.length; i++) {
+				if(curr[i] === past[i]) {
+					cnt++;
+				}
+			}
+			let perc = (cnt/(curr.length) * 100).toFixed(2);
+			console.log(`specimen #1 and specimen #2 have ${perc}% DNA in common`);
+		},
+		// check if it will likely survive
+		willLikelySurvive() { 
+			let cnt = 0;
+
+			for(let each of this.dna) {
+				if (each === 'C' || each === 'G') {
+					cnt++;
+				}
+			}
+			let perc = (cnt/this.dna.length) * 100;
+			// console.log(`percent of survival: ${perc}`);
+
+			if (perc >= 60) {
+				return true;
+			} else {
+				return false;
+			}
+		},
+		// look for complement strands that match DNA strand
+		// https://discoveringthegenome.org/discovering-genome/dna-sequencing/dna-complementary-base-pairing
+		complementStrand() {},
 	};
 }
 
+/**
+ * Testing
+ */
+let x = pAequorFactory(1, mockUpStrand());
+// console.log(x.dna);
 
+// x.mutate();
+// console.log(x.dna);
 
+// let y = pAequorFactory(2, mockUpStrand());
+// console.log(y.dna);
+// x.compareDNA(y);
+
+// console.log(x.willLikelySurvive());
+
+/**
+ * Create 30 survived instance of pAequor
+ * 
+ */
+function survival30() {
+	let cnt = 0;
+	let spec = 0;
+	let survived = [];
+	while (cnt < 30) {
+		let dna = mockUpStrand();
+		let newpAe = pAequorFactory(spec, dna);
+
+		if (newpAe.willLikelySurvive()) {
+			survived.push(newpAe);
+			cnt++;
+		}
+		spec++;
+	}
+	console.log(survived);
+	console.log(cnt);
+}
+
+// survival30();
