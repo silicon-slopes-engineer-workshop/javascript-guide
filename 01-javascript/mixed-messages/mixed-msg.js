@@ -17,13 +17,29 @@ let rand = (arr) => {
 	return Math.floor(Math.random() * arr.length);
 };
 
-let firstname = () => { return names[rand(names)]; };
+let getItem = (arr) => { return arr[rand(arr)]; };
 
-// let meaning = getMeaning();
-// let local = getLocal();
-// let job = getJob();
+let findMeaning = (name, arr, means) => {
+	let i = arr.indexOf(name);
+	return means[i];
+};
 
-// console.log(`Your name is: ${name}`);
-// console.log(`It means: ${meaning}`);
-// console.log(`You're from: ${local}`);
-// console.log(`You works as ${job}`);
+let first = getItem(names);
+let firstMeans = findMeaning(first, names, meanings);
+
+let last = getItem(names);
+let lastMeans = findMeaning(last, names, meanings);
+
+let local = () => {
+	return localPrefix[rand(localPrefix)] + localSuffix[rand(localSuffix)];
+};
+
+let job = getItem(jobs);
+let jobMeans = findMeaning(job, jobs, jobDesc);
+
+console.log(`In medieval lifetime, your name is ${first} ${last}!`);
+console.log(`'${first}' means '${firstMeans}'`);
+console.log(`'${last}' means '${lastMeans}'`);
+console.log(`You're from ${local()}`);
+console.log(`Your job is a/an ${job}`);
+console.log(`(${jobMeans})`);
