@@ -105,3 +105,15 @@ In addition to doing random messages, you could add random [ASCII art](https://e
 ### Getting user input in NodeJS
 
 > Following this article: https://www.codecademy.com/articles/getting-user-input-in-node-js or checkout [user-input-node.md](01-javascript\mixed-messages\user-input-node.md)
+
+> Another interesting article to read: https://nodejs.org/en/knowledge/command-line/how-to-prompt-for-command-line-input/
+
+#### Idea:
+
+Generate a random story based on user input: name, location, # of goats (selling or buying LOL), gold (like a video game).
+
+**---> End up not using this idea**
+
+#### Idea 2:
+
+Generate random a medieval name with first and last name, along with their meanings, a random medieval location (vilage / cities), and jobs.
