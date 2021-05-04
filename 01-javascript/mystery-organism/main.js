@@ -69,7 +69,27 @@ const pAequorFactory = (number, arr) => {
 		},
 		// look for complement strands that match DNA strand
 		// https://discoveringthegenome.org/discovering-genome/dna-sequencing/dna-complementary-base-pairing
-		complementStrand() {},
+		complementStrand() {
+			let compleDNA = this.dna.map(strand => {
+				switch(strand) {
+					case 'A':
+						return 'T';
+						break;
+					case 'T':
+						return 'A';
+						break;
+					case 'C':
+						return 'G';
+						break;
+					case 'G':
+						return 'C';
+						break;
+					default:
+						break;
+				}
+			});
+			return compleDNA;
+		},
 	};
 }
 
@@ -77,7 +97,8 @@ const pAequorFactory = (number, arr) => {
  * Testing
  */
 let x = pAequorFactory(1, mockUpStrand());
-// console.log(x.dna);
+console.log(x.dna);
+console.log(x.complementStrand());
 
 // x.mutate();
 // console.log(x.dna);
