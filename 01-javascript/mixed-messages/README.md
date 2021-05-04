@@ -95,3 +95,13 @@ You’re welcome to expand your program beyond these project tasks and get creat
 **Hints:**
 
 In addition to doing random messages, you could add random [ASCII art](https://en.wikipedia.org/wiki/ASCII_art).
+
+----
+
+## WIKI
+
+> Thought and step process through out the project.
+
+### Getting user input in NodeJS
+
+> Following this article: https://www.codecademy.com/articles/getting-user-input-in-node-js or checkout [user-input-node.md](01-javascript\mixed-messages\user-input-node.md)
