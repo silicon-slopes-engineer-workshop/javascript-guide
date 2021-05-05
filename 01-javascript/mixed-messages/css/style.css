@@ -1,0 +1,16 @@
+.lead {
+	font-size: 1.25rem;
+	font-weight: 300;
+}
+
+.lead span {
+	font-weight: 600;
+}
+
+.sub {
+	color: gray;
+}
+
+.sub span {
+	font-weight: 700;
+}

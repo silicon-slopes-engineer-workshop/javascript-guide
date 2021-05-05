@@ -37,9 +37,34 @@ let local = () => {
 let job = getItem(jobs);
 let jobMeans = findMeaning(job, jobs, jobDesc);
 
+/**
+ * Print on console
+ */
 console.log(`In medieval lifetime, your name is ${first} ${last}!`);
 console.log(`'${first}' means '${firstMeans}'`);
 console.log(`'${last}' means '${lastMeans}'`);
 console.log(`You're from ${local()}`);
 console.log(`Your job is a/an ${job}`);
 console.log(`(${jobMeans})`);
+
+/**
+ * Display on UI
+ */
+let disFirst = document.getElementsByClassName('firstname');
+let disLast = document.getElementsByClassName('lastname');
+
+loopThroughClass(disFirst, first);
+loopThroughClass(disLast, last);
+
+document.getElementById('firstmeaning').innerHTML = firstMeans;
+document.getElementById('lastmeaning').innerHTML = lastMeans;
+
+document.getElementById('location').innerHTML = local();
+document.getElementById('job').innerHTML = job;
+document.getElementById('jobdescription').innerHTML = jobMeans;
+
+function loopThroughClass(classname, input) {
+	for(let each in classname) {
+		classname[each].innerHTML = input;
+	}
+}

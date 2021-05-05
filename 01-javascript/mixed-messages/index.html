@@ -7,13 +7,30 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/ionicons.min.css">
 	<link rel="stylesheet" href="css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 
-<body>
-	
+<body class="d-flex h-100 text-center text-white bg-dark">
+	<div class="flex-columnw-100 h-100 p-3 mx-auto container">
+        <header class="py-3">
+            <h1>Your Medieval Life</h1>
+        </header>
+
+        <main>
+            <p class="lead">In this medieval life time, your name is <span class="firstname"></span> <span class="lastname"></span>.</p>
+            <p class="sub">The name "<span class="firstname"></span>" means <span id="firstmeaning"></span></p>
+            <p class="sub">The name "<span class="lastname"></span>" means <span id="lastmeaning"></span></p>
+            
+            <p class="lead">
+                You're coming from such a far land.
+                Your hometown is called <span id="location"></span>.
+            </p>
+            
+            <p class="lead">You're here to work as <span id="job"></span></p>
+            <p class="sub" id="jobdescription"></p>
+        </main>
+</div>
 	<script src="js/mixed-msg.js"></script>
     <script src="js/bootstrap.js"></script>
 
