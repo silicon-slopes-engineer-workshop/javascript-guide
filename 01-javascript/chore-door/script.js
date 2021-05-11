@@ -38,13 +38,11 @@ const randomChoreDoorGenerator = () => {
 	}
 };
 
-startRound();
-
-// startButton.onclick = () => {
-// 	if (currentlyPlaying) {
-// 		startButton.disabled = true;
-// 	}
-// };
+startButton.onclick = () => {
+	if (!currentlyPlaying) {
+		startRound();
+	}
+};
 
 doorImage1.onclick = () => {
 	if (!isClicked(doorImage1) && currentlyPlaying) {
@@ -102,3 +100,5 @@ const gameOver = (status) => {
 		currentlyPlaying = false;
 	}
 }
+
+startRound();
