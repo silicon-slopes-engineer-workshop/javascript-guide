@@ -1,14 +1,16 @@
-const testData = [
-	{ name: "Dan Abramov", avatar_url: "https://avatars0.githubusercontent.com/u/810438?v=4", company: "Facebook" },
-	{ name: "Sophie Albert", avatar_url: "https://avatars2.githubusercontent.com/u/6820?v=4", company: "Facebook" },
-	{ name: "Sabastian Markbage", avatar_url: "https://avatars2.githubusercontent.com/u/63648?v=4", company: "Facebook" },
-];
+// const testData = [
+// 	{ name: "Dan Abramov", avatar_url: "https://avatars0.githubusercontent.com/u/810438?v=4", company: "Facebook" },
+// 	{ name: "Sophie Albert", avatar_url: "https://avatars2.githubusercontent.com/u/6820?v=4", company: "Facebook" },
+// 	{ name: "Sabastian Markbage", avatar_url: "https://avatars2.githubusercontent.com/u/63648?v=4", company: "Facebook" },
+// ];
+
+// Github usernames: gaearon, sophiebits, sebmarkbage, bvaughn
 
 // CardList
 // function
 const CardList = (props) => (
 	<div>
-    {props.profiles.map(profile => <Card {...profile} />)}
+		{props.profiles.map(profile => <Card key={profile.id}  {...profile} />)}
 	</div>
 );
 
@@ -32,35 +34,36 @@ class Card extends React.Component {
 }
 
 class Form extends React.Component {
-  // userNameInput = React.createRef();
-  state = { userName: '' };
-  
-  handleSubmit = async (event) => {
-    event.preventDefault(); // important when working with form
-    // axios library
-    const resp = await axios.get(`https://api.github.com/users/${this.state.userName}`);
-    this.props.onSubmit(resp.data);
-    // console.log(
-      // this.userNameInput.current.value
-      // this.state.userName
-      // resp.data
-    // );
-  };
-  
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <input 
-          type="text" 
-          value={this.state.userName}
-          onChange={event => this.setState({ userName: event.target.value })}
-          placeholder="Github username" 
-          required 
-        />
-        <button>Add card</button>
-      </form>
-    );
-  }
+	// userNameInput = React.createRef();
+	state = { userName: '' };
+
+	handleSubmit = async (event) => {
+		event.preventDefault(); // important when working with form
+		// axios library
+		const resp = await axios.get(`https://api.github.com/users/${this.state.userName}`);
+		this.props.onSubmit(resp.data);
+		this.setState({ userName: '' })
+		// console.log(
+		// this.userNameInput.current.value
+		// this.state.userName
+		// resp.data
+		// );
+	};
+
+	render() {
+		return (
+			<form onSubmit={this.handleSubmit}>
+				<input
+					type="text"
+					value={this.state.userName}
+					onChange={event => this.setState({ userName: event.target.value })}
+					placeholder="Github username"
+					required
+				/>
+				<button>Add card</button>
+			</form>
+		);
+	}
 }
 
 // App
@@ -70,29 +73,29 @@ class Form extends React.Component {
 // );
 // class component
 class App extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     profiles: testData,
-  //   };
-  // }
-  
-  state = {
-    profiles: testData,
-  };
-  
-  addNewProfile = (profileData) => {
-    console.log('App', profileData);
-    this.setState(prevState => ({
-      profiles: [...prevState.profiles, profileData],
-    }));
-  };
-  
+	// constructor(props) {
+	//   super(props);
+	//   this.state = {
+	//     profiles: testData,
+	//   };
+	// }
+
+	state = {
+		profiles: [],
+	};
+
+	addNewProfile = (profileData) => {
+		console.log('App', profileData);
+		this.setState(prevState => ({
+			profiles: [...prevState.profiles, profileData],
+		}));
+	};
+
 	render() {
 		return (
 			<div>
 				<div className="header">{this.props.title}</div>
-        <Form onSubmit={this.addNewProfile}/>
+				<Form onSubmit={this.addNewProfile} />
 				<CardList profiles={this.state.profiles} />
 			</div>
 		);
