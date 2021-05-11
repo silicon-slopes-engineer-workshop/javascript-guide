@@ -1,6 +1,10 @@
 // STAR MATCH - Starting Template
 const ButtonNumber = props => (
-	<button className="number" onClick={() => console.log('Num', props.number)}>
+	<button 
+		className="number"
+		style={{ backgroundColor: colors[props.status] }}
+		onClick={() => console.log('Num', props.number)}
+	>
 		{props.number}
 	</button>
 );
@@ -15,6 +19,20 @@ const DisplayStar = props => (
 
 const StarMatch = () => {
 	const [stars, setStarts] = useState(utils.random(1,9));
+	const [availableNums, setAvailableNums] = useState([1, 2, 3, 4, 5]);
+	const [candidateNums, setCandidateNums] = useState([2, 3]);
+
+	const candidatesAreWrong = utils.sum(candidateNums) > stars;
+
+	const numberStatus = (number) => {
+		if (!availableNums.includes(number))  {
+			return 'used';
+		}
+		if (candidateNums.includes(number)) {
+			return candidatesAreWrong ? 'wrong' : 'candidate';
+		}
+		return 'available';
+	};
 
 	return (
 		<div className="game">
@@ -28,7 +46,11 @@ const StarMatch = () => {
 				<div className="right">
 					{utils.range(1, 9).map(number =>
 						// TODO: number button
-						<ButtonNumber key={number} number={number} />
+						<ButtonNumber 
+							key={number} 
+							status={numberStatus(number)}
+							number={number} 
+						/>
 					)}
 				</div>
 			</div>
