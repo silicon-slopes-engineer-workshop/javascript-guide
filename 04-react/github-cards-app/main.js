@@ -8,11 +8,12 @@ const testData = [
 // function
 const CardList = (props) => (
 	<div>
-		<Card {...testData[0]} />
-		<Card {...testData[1]} />
-		<Card {...testData[0]} />
+    {testData.map(profile => <Card {...profile} />)}
 	</div>
 );
+
+/// [ <Card />, <Card />, <Card /> ]
+// [ React.createElement(), React.createElement(), React.createElement() ]
 
 // Card
 class Card extends React.Component {
