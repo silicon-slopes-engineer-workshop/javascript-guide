@@ -1,0 +1,53 @@
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="./favicon.ico">
+	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=yes">
+	<meta name="theme-color" content="#000000">
+	<link rel="manifest" href="/manifest.json">
+	<title>Regular Expressions</title>
+	<link href="./style.css" rel="stylesheet">
+	<script async="" src="/cdn-cgi/bm/cv/669835187/api.js"></script>
+</head>
+<!-- https://content.codecademy.com/courses/PHP_FORMS/build/index.html -->
+<body><noscript>You need to enable JavaScript to run this app.</noscript>
+	<div id="root">
+		<div class="App">
+			<h2 id="title">Enter A Pattern And See What Matches:</h2><input id="expression" autocomplete="off"
+				placeholder="Enter a pattern here..."><br>
+			<p>Try entering some patterns in the applet provided. If you enter ello, you’ll notice how many of the examples include those characters. We could fully match all of the expressions with the pattern [^]*. To match the first four expressions, we could use a pattern like [hH]ello[^]*. The pattern [^]*\d{3}[^]*\d{3}-\d{4} will match the two example phone numbers. </p>
+			<div>
+				<ul>
+					<li><span class="icon">🚫</span><span class="notMatched">hello</span><span
+							class="matched"></span><span class="notMatched"></span></li>
+					<li><span class="icon">🚫</span><span class="notMatched">hello world</span><span
+							class="matched"></span><span class="notMatched"></span></li>
+					<li><span class="icon">🚫</span><span class="notMatched">Hello, world!</span><span
+							class="matched"></span><span class="notMatched"></span></li>
+					<li><span class="icon">🚫</span><span class="notMatched">Hello, Friend!</span><span
+							class="matched"></span><span class="notMatched"></span></li>
+					<li><span class="icon">🚫</span><span class="notMatched">coolEmail@blorglax.com</span><span
+							class="matched"></span><span class="notMatched"></span></li>
+					<li><span class="icon">🚫</span><span class="notMatched">P@55w0rd!</span><span
+							class="matched"></span><span class="notMatched"></span></li>
+					<li><span class="icon">🚫</span><span class="notMatched">(617) 222-1247</span><span
+							class="matched"></span><span class="notMatched"></span></li>
+					<li><span class="icon">🚫</span><span class="notMatched">+1-341-554-3910</span><span
+							class="matched"></span><span class="notMatched"></span></li>
+					<li><span class="icon">🚫</span><span class="notMatched">1630 Revello Drive, Sunnydale,
+							California</span><span class="matched"></span><span class="notMatched"></span></li>
+					<li><span class="icon">🚫</span><span class="notMatched">3170 West 53 Road, #35, Annapolis,
+							Maryland</span><span class="matched"></span><span class="notMatched"></span></li>
+				</ul>
+			</div><br>
+		</div>
+	</div>
+	<script>!function (l) { function e(e) { for (var r, t, n = e[0], o = e[1], u = e[2], f = 0, i = []; f < n.length; f++)t = n[f], p[t] && i.push(p[t][0]), p[t] = 0; for (r in o) Object.prototype.hasOwnProperty.call(o, r) && (l[r] = o[r]); for (s && s(e); i.length;)i.shift()(); return c.push.apply(c, u || []), a() } function a() { for (var e, r = 0; r < c.length; r++) { for (var t = c[r], n = !0, o = 1; o < t.length; o++) { var u = t[o]; 0 !== p[u] && (n = !1) } n && (c.splice(r--, 1), e = f(f.s = t[0])) } return e } var t = {}, p = { 2: 0 }, c = []; function f(e) { if (t[e]) return t[e].exports; var r = t[e] = { i: e, l: !1, exports: {} }; return l[e].call(r.exports, r, r.exports, f), r.l = !0, r.exports } f.m = l, f.c = t, f.d = function (e, r, t) { f.o(e, r) || Object.defineProperty(e, r, { enumerable: !0, get: t }) }, f.r = function (e) { "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e, "__esModule", { value: !0 }) }, f.t = function (r, e) { if (1 & e && (r = f(r)), 8 & e) return r; if (4 & e && "object" == typeof r && r && r.__esModule) return r; var t = Object.create(null); if (f.r(t), Object.defineProperty(t, "default", { enumerable: !0, value: r }), 2 & e && "string" != typeof r) for (var n in r) f.d(t, n, function (e) { return r[e] }.bind(null, n)); return t }, f.n = function (e) { var r = e && e.__esModule ? function () { return e.default } : function () { return e }; return f.d(r, "a", r), r }, f.o = function (e, r) { return Object.prototype.hasOwnProperty.call(e, r) }, f.p = "/"; var r = window.webpackJsonp = window.webpackJsonp || [], n = r.push.bind(r); r.push = e, r = r.slice(); for (var o = 0; o < r.length; o++)e(r[o]); var s = n; a() }([])</script>
+	<script src="./static/js/1.3f0b2299.chunk.js"></script>
+	<script src="./static/js/main.a58ce59f.chunk.js"></script>
+	<script
+		type="text/javascript">(function () { window['__CF$cv$params'] = { r: '64df9c46396b3e0a', m: '57ee552291019ba36374dea4237a7666877c2f5c-1620780181-1800-AapYFyVhtqR3YN7p4oBmeW5xz8ade9pv5TQwDXIyGTcjVqh9KBAIJz5G9/3j4x8gN57+BUBwN66w4kYwk/hx/8bFKlA03Vu8kNnp0/y384PaW/z4AnQZ9AgTHlt7c7Vf2BBhM/M9GwolhM+/zx7JmCmL85lJjIJnnxfGLXlpbsMt', s: [0x5fda1fdba6, 0x14a4954e5c], } })();</script>
+</body>
+
+</html>

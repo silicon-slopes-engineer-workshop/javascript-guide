@@ -1,0 +1,47 @@
+body {
+	text-align: center;
+	font-family: Helvetica;
+	background-color: #efd9ca;
+	height: 100%;
+	font-size: xx-large;
+}
+
+ul {
+	text-align: center;
+	list-style: none;
+}
+
+li {
+	text-align: left;
+	font-family: Helvetica;
+}
+
+.icon {
+	display: inline;
+	padding-right: .35em;
+}
+
+#explanation {
+	text-align: justify;
+	font-family: Helvetica;
+}
+
+#expression {
+	font-size: xx-large;
+}
+
+input {
+	width: 12em;
+	height: 2.3em;
+}
+
+.matched {
+	color: #20a530;
+	font-weight: 700;
+	text-shadow: .01em .01em #0e6a18;
+}
+
+.notMatched {
+	color: #141c3a;
+	font-weight: 600;
+}
