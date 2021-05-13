@@ -25,3 +25,5 @@ class HouseFilter extends Component {
         )
     }
 }
+
+export default HouseFilter;

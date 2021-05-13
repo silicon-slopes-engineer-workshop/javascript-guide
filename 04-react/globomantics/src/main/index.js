@@ -4,7 +4,7 @@ import './bootstrap.css';
 import Header from "./header";
 import FeaturedHouse from './featuredhouse';
 import { Component } from 'react';
-
+import HouseFilter from './house-filter';
 
 class App extends Component {
 
@@ -40,6 +40,7 @@ class App extends Component {
 		return (
 			<div className="container">
 				<Header subtitle="Providing houses world wide" />
+				<HouseFilter countries={this.state.countries} />
 				<FeaturedHouse house={this.state.featuredHouse} />
 			</div>
 		);
