@@ -5,6 +5,8 @@ import './bootstrap.css';
 import Header from "./header";
 import FeaturedHouse from './featuredhouse';
 import HouseFilter from './house-filter';
+import SearchResults from '../search-results';
+import HouseDetail from '../house';
 
 class App extends Component {
 
@@ -41,17 +43,34 @@ class App extends Component {
 	}
 
 	filterHouses = (country) => {
+		this.setState({ activeHouse: null });
 		const filteredHouses = this.allHouses.filter((h) => h.country === country);
-		this.setState({ filteredHouse });
+		this.setState({ filteredHouses });
 		this.setState({ country });
 	}
 
+	setActiveHouse = (house) => {
+		this.setState({ activeHouse: house });
+	}
+
 	render() {
+		let activeComponent = null;
+		if (this.state.country)
+			activeComponent = <SearchResults country={this.state.country}
+		
+		filterHouses = {this.state.filteredHouse} setActiveHouse={this.setActiveHouse} />;
+
+		if (this.state.activeHouse)
+			activeComponent = <HouseDetail house={this.state.activeHouse} />;
+		
+		if (!activeComponent)
+			activeComponent = <FeaturedHouse house={this.state.featuredHouse} />;
+
 		return (
 			<div className="container">
 				<Header subtitle="Providing houses world wide" />
 				<HouseFilter countries={this.state.countries} filterHouses={this.filterHouses} />
-				<FeaturedHouse house={this.state.featuredHouse} />
+				{activeComponent}
 			</div>
 		);
 	}

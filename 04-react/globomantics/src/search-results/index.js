@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SearchResultsRow from './search-results-row';
 
-const SearchResultsRow = (props) => {
+const SearchResults = (props) => {
     const houseRows = props.filteredHouses.map(h => 
         <SearchResultsRow 
             key={h.id.toString()} 
